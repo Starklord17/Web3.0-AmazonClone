@@ -10,7 +10,8 @@ describe("Dappazon", () => {
   it('has a name', async() => {
     const Dappazon = await ethers.getContractFactory("Dappazon")
     dappazon = await Dappazon.deploy()
-    expect(await dappazon.name()).to.equal("Dappazon")
+    const name = await dappazon.name()
+    expect(name).to.equal("Dappazon")
   })
 
 })
