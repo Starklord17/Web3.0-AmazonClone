@@ -23,6 +23,29 @@ describe("Dappazon", () => {
     it("Sets the owner", async () => {
       expect(await dappazon.owner()).to.equal(deployer.address)
     })
+  })
+
+    describe("Listing", () => {
+      let transaction
+
+      beforeEach(async () => {
+        transaction = await dappazon.connect(deployer).list(
+          1,
+          "Shoes",
+          "Clothing",
+          "IMAGE",
+          1,
+          4,
+          5
+        )
+
+        await transaction.wait()
+      })
+
+      it("Returns item attributes", async () => {
+        const item = await dappazon.items(1)
+        expect(item.id).to.equal(1)
+      })
   
     // it('has a name', async() => {
     //   const name = await dappazon.name()
