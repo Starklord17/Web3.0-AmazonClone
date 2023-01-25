@@ -53,8 +53,8 @@ describe("Dappazon", () => {
 
       it("Returns item attributes", async () => {
         const item = await dappazon.items(ID)
+        
         expect(item.id).to.equal(ID)
-
         expect(item.name).to.equal(NAME)
         expect(item.category).to.equal(CATEGORY)
         expect(item.image).to.equal(IMAGE)
@@ -62,11 +62,11 @@ describe("Dappazon", () => {
         expect(item.rating).to.equal(RATING)
         expect(item.stock).to.equal(STOCK)
       })
+
+      it("Emits List event", () => {
+        expect(transaction).to.emit(dappazon, "List")
+      })
   
-    // it('has a name', async() => {
-    //   const name = await dappazon.name()
-    //   expect(name).to.equal("Dappazon")
-    // })
   })
 
 })

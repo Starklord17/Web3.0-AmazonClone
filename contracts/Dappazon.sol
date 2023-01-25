@@ -18,6 +18,9 @@ contract Dappazon {
     // Treat the blockchain as a database
     mapping(uint256 => Item) public items;
 
+    // Define event
+    event List(string name, uint256 cost, uint256 quantity);
+
     constructor() {
         // name = "Dappazon";
         owner = msg.sender;
@@ -33,6 +36,10 @@ contract Dappazon {
         uint256 _rating,
         uint256 _stock
     ) public {
+
+        // Solidity special function called require that evaluates boolean values
+        require(msg.sender == owner);
+
         // Create Item struct
         Item memory item = Item(
             _id,
@@ -46,6 +53,9 @@ contract Dappazon {
 
         // Save Item Struct to blockchain
         items[_id] = item;
+
+        // Emit an event
+        emit List(_name, _cost, _stock);
     }
 
         // Buy products
