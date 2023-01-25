@@ -21,6 +21,12 @@ contract Dappazon {
     // Define event
     event List(string name, uint256 cost, uint256 quantity);
 
+    // Modifier with Solidity special function called require that evaluates boolean values
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _; // This represents the function body.
+    }
+
     constructor() {
         // name = "Dappazon";
         owner = msg.sender;
@@ -35,10 +41,7 @@ contract Dappazon {
         uint256 _cost,
         uint256 _rating,
         uint256 _stock
-    ) public {
-
-        // Solidity special function called require that evaluates boolean values
-        require(msg.sender == owner);
+    ) public onlyOwner {
 
         // Create Item struct
         Item memory item = Item(
