@@ -54,6 +54,13 @@ describe("Dappazon", () => {
       it("Returns item attributes", async () => {
         const item = await dappazon.items(ID)
         expect(item.id).to.equal(ID)
+
+        expect(item.name).to.equal(NAME)
+        expect(item.category).to.equal(CATEGORY)
+        expect(item.image).to.equal(IMAGE)
+        expect(item.cost).to.equal(COST)
+        expect(item.rating).to.equal(RATING)
+        expect(item.stock).to.equal(STOCK)
       })
   
     // it('has a name', async() => {
