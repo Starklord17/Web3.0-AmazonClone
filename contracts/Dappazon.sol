@@ -27,6 +27,7 @@ contract Dappazon {
 
     // Define event
     event List(string name, uint256 cost, uint256 quantity);
+    event Buy(address buyer, uint256 orderId, uint256 itemId);
 
     // Modifier with Solidity special function called require that evaluates boolean values
     modifier onlyOwner() {
@@ -74,6 +75,12 @@ contract Dappazon {
             // Fetch item
             Item memory item = items[_id];
 
+            // Require enough Ether to buy item
+            require(msg.value >= item.cost);
+
+            // Require item is in stock
+            require(item.stock > 0);
+
             // Create an order
             Order memory order = Order(block.timestamp, item);
 
@@ -85,9 +92,14 @@ contract Dappazon {
             items[_id].stock = item.stock - 1;
 
             // Emit event
+            emit Buy(msg.sender, orderCount[msg.sender], item.id);
         }
 
         // Withdraw funds
+        function withdraw() public onlyOwner {
+            (bool success, ) = owner.call{value: address(this).balance}("");
+            require(success);
+        }
 
 }
 
