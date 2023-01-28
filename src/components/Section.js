@@ -1,7 +1,7 @@
-import { ethers } from 'ethers'
+import { ethers } from "ethers";
 
 // Components
-import Rating from './Rating'
+import Rating from "./Rating";
 
 const Section = ({ title, items, togglePop }) => {
     return (
@@ -9,14 +9,23 @@ const Section = ({ title, items, togglePop }) => {
             <h3 id={title}>{title}</h3>
 
             <hr />
+
             <div className='cards'>
                 {items.map((item, index) => (
-                    <p>{item.name}</p>
+                    <div className='card' key={index} onClick={() => togglePop(item)}>
+                        <div className='card__image'>
+                            <img src={item.image} alt="Item" />
+                        </div>
+                        <div className='card__info'>
+                            <h4>{item.name}</h4>
+                            <Rating value={item.rating} />
+                            <p>{ethers.utils.formatUnits(item.cost.toString(), 'ether')} ETH</p>
+                        </div>
+                    </div>
                 ))}
             </div>
-
         </div>
     );
-}
+};
 
 export default Section;
