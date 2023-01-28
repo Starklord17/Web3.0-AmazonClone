@@ -4,7 +4,9 @@ const Navigation = ({ account, setAccount }) => {
 
     return (
         <nav>
-            {account}
+            <div className='nav__brand'>
+                <h1>Dappazon</h1>
+            </div>
         </nav>
     );
 }
