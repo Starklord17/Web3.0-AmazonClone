@@ -8,6 +8,13 @@ const Section = ({ title, items, togglePop }) => {
         <div className='cards__section'>
             <h3 id={title}>{title}</h3>
 
+            <hr />
+            <div className='cards'>
+                {items.map((item, index) => (
+                    <p>{item.name}</p>
+                ))}
+            </div>
+
         </div>
     );
 }
