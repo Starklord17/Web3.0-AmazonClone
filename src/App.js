@@ -22,6 +22,14 @@ function App() {
   const [electronics, setElectronics] = useState(null)
   const [clothing, setClothing] = useState(null)
   const [toys, setToys] = useState(null)
+
+  const [item, setItem] = useState({})
+  const [toggle, setToggle] = useState(false)
+
+  const togglePop = (item) => {
+    setItem(item)
+    toggle ? setToggle(false) : setToggle(true)
+  }
   
   const loadBlockchainData = async () => {
     // Connect to blockchain
@@ -65,9 +73,16 @@ function App() {
       <h2>Dappazon Best Sellers</h2>
 
       {electronics && clothing && toys && (
-        <p>Products</p>
+        <>
+          <Section title={"Clothing & Jewelry"} items={clothing} togglePop={togglePop} />
+          <Section title={"Electronics & Gadgets"} items={electronics} togglePop={togglePop} />
+          <Section title={"Toys & Gaming"} items={toys} togglePop={togglePop} />
+        </>
       )}
 
+       {toggle && (
+        <Product item={item} provider={provider} account={account} dappazon={dappazon} togglePop={togglePop} />
+      )}
 
     </div>
   );
