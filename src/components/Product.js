@@ -10,7 +10,13 @@ const Product = ({ item, provider, account, dappazon, togglePop }) => {
 
   return (
     <div className="product">
-
+      <div className="product__details">
+        <div className="product__image">
+          <img src={item.image} alt="Product" />
+        </div>
+        <div className="product__overview"></div>
+      
+      </div>
     </div >
   );
 }
