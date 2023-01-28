@@ -4,3 +4,5 @@ require("@nomicfoundation/hardhat-toolbox");
 module.exports = {
   solidity: "0.8.17",
 };
+
+// https://hardhat.org/hardhat-runner/docs/config
