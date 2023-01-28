@@ -4,7 +4,7 @@ const Navigation = ({ account, setAccount }) => {
 
     return (
         <nav>
-
+            {account}
         </nav>
     );
 }
