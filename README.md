@@ -4,16 +4,19 @@
 
 ## Technology Stack & Tools
 
-- Solidity (Writing Smart Contracts & Tests)
-- Javascript (React & Testing)
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (React & Testing)
+- [React.js](https://reactjs.org/) (Frontend Framework)
+- [Solidity](https://docs.soliditylang.org/en/v0.8.17/) (Writing Smart Contracts & Tests)
 - [Hardhat](https://hardhat.org/) (Development Framework)
 - [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
-- [React.js](https://reactjs.org/) (Frontend Framework)
+- [Metamask](https://docs.metamask.io/guide/) (Blockchain Connection)
 
 ---
+Web3 E-Commerce arquitecture
+<img src="./img/1.png" width="100%" alt="Logo of the project" >
 
-<img src="./img/1.png" hight="80%" width="100%" alt="Logo of the project" >
-<img src="./img/2.png" hight="80%"  width="100%" alt="Logo of the project" >
+Img storage in [IPFS](https://en.wikipedia.org/wiki/InterPlanetary_File_System)
+<img src="./img/2.png" width="100%" alt="Logo of the project" >
 
 ---
 
