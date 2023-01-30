@@ -1,4 +1,6 @@
-# Dappazon
+# Dappazon / Web3.0-AmazonClone
+
+![Preview](./img/Dappazon.png 'Preview')
 
 ## Technology Stack & Tools
 
@@ -7,6 +9,13 @@
 - [Hardhat](https://hardhat.org/) (Development Framework)
 - [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
 - [React.js](https://reactjs.org/) (Frontend Framework)
+
+---
+
+<img src="./img/1.png" hight="80%" width="100%" alt="Logo of the project" >
+<img src="./img/2.png" hight="80%"  width="100%" alt="Logo of the project" >
+
+---
 
 ## Requirements For Initial Setup
 - Install [NodeJS](https://nodejs.org/en/)
@@ -30,5 +39,6 @@ In a separate terminal execute:
 ### 6. Start frontend
 `$ npm run start`
 
-## Documentation:
-[Ethers.js](https://docs.ethers.org/v5/)
+---
+
+### Credits for [Dapp University](https://www.dappuniversity.com/)
